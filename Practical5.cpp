@@ -40,8 +40,7 @@ destIndex = i;
 break;
 }
 }
-if (distances[destIndex] == INF) { cout << "There is no path from the
-source to the destination." << endl; return;
+if (distances[destIndex] == INF) { cout << "There is no path from thesource to the destination." << endl; return;
 }
 cout << "Shortest path from source to " << destination << " (distance: " <<
 distances[destIndex] << "):" << endl;
@@ -93,18 +92,12 @@ string start_vertex, end_vertex; cout <<
 start_vertex;
 dijkstra(1);
 cout <<
-"Shortest
-distances
-from
-vertex "
-<<
-start_vert
-ex << ":"
+"Shortest distances from vertex "
+<<start_vertex << ":"
 << endl;
 for (int i =
 1; i <=
-num_verti
-ces; ++i) {
+num_vertices; ++i) {
 cout << "To vertex " << vertices[i] << ": " << distances[i] << endl;
 }
 cout << "Enter the destination vertex: ";
