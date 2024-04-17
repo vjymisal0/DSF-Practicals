@@ -3,16 +3,16 @@ import java.util.*;
 class Student {
     String name;
     int rollNumber;
-    
+
     public Student(String name, int rollNumber) {
         this.name = name;
         this.rollNumber = rollNumber;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public int getRollNumber() {
         return rollNumber;
     }
@@ -21,7 +21,7 @@ class Student {
 class ChainingWithoutReplacement {
     private LinkedList<Student>[] hashTable;
     private int size;
-    
+
     public ChainingWithoutReplacement(int size) {
         this.size = size;
         hashTable = new LinkedList[size];
@@ -29,16 +29,16 @@ class ChainingWithoutReplacement {
             hashTable[i] = new LinkedList<>();
         }
     }
-    
+
     public int hashFunction(int key) {
         return key % size;
     }
-    
+
     public void insert(Student student) {
         int index = hashFunction(student.getRollNumber());
         hashTable[index].add(student);
     }
-    
+
     public void display() {
         for (int i = 0; i < size; i++) {
             System.out.print("[" + i + "]");
@@ -53,16 +53,16 @@ class ChainingWithoutReplacement {
 class ChainingWithReplacement {
     private Student[] hashTable;
     private int size;
-    
+
     public ChainingWithReplacement(int size) {
         this.size = size;
         hashTable = new Student[size];
     }
-    
+
     public int hashFunction(int key) {
         return key % size;
     }
-    
+
     public void insert(Student student) {
         int index = hashFunction(student.getRollNumber());
         if (hashTable[index] == null) {
@@ -77,7 +77,7 @@ class ChainingWithReplacement {
             System.out.println("HashTable is full. Unable to insert.");
         }
     }
-    
+
     public void display() {
         for (int i = 0; i < size; i++) {
             if (hashTable[i] != null) {
@@ -94,7 +94,7 @@ public class PR8 {
         chainingWithoutReplacement.insert(new Student("Bob", 102));
         chainingWithoutReplacement.insert(new Student("Charlie", 111));
         chainingWithoutReplacement.display();
-        
+
         ChainingWithReplacement chainingWithReplacement = new ChainingWithReplacement(10);
         chainingWithReplacement.insert(new Student("Dave", 101));
         chainingWithReplacement.insert(new Student("Eva", 102));
