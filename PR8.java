@@ -1,16 +1,12 @@
 import java.util.*;
 
 class Student {
-    String name;
+
     int rollNumber;
 
-    public Student(String name, int rollNumber) {
-        this.name = name;
-        this.rollNumber = rollNumber;
-    }
+    public Student(int rollNumber) {
 
-    public String getName() {
-        return name;
+        this.rollNumber = rollNumber;
     }
 
     public int getRollNumber() {
@@ -43,7 +39,7 @@ class ChainingWithoutReplacement {
         for (int i = 0; i < size; i++) {
             System.out.print("[" + i + "]");
             for (Student student : hashTable[i]) {
-                System.out.print(" -> " + student.getName());
+                System.out.print(" -> " + student.getRollNumber());
             }
             System.out.println();
         }
@@ -81,7 +77,7 @@ class ChainingWithReplacement {
     public void display() {
         for (int i = 0; i < size; i++) {
             if (hashTable[i] != null) {
-                System.out.println("[" + i + "] " + hashTable[i].getName());
+                System.out.println("[" + i + "] " + hashTable[i].getRollNumber());
             }
         }
     }
@@ -90,17 +86,26 @@ class ChainingWithReplacement {
 public class PR8 {
     public static void main(String[] args) {
         ChainingWithoutReplacement chainingWithoutReplacement = new ChainingWithoutReplacement(10);
-        chainingWithoutReplacement.insert(new Student("Alice", 101));
-        chainingWithoutReplacement.insert(new Student("Bob", 102));
-        chainingWithoutReplacement.insert(new Student("Charlie", 111));
+        chainingWithoutReplacement.insert(new Student(101));
+        chainingWithoutReplacement.insert(new Student(102));
+        chainingWithoutReplacement.insert(new Student(111));
+        chainingWithoutReplacement.insert(new Student(110));
+        chainingWithoutReplacement.insert(new Student(115));
+        chainingWithoutReplacement.insert(new Student(120));
+        System.out.println("Chaining Without Replacement");
         chainingWithoutReplacement.display();
 
         ChainingWithReplacement chainingWithReplacement = new ChainingWithReplacement(10);
-        chainingWithReplacement.insert(new Student("Dave", 101));
-        chainingWithReplacement.insert(new Student("Eva", 102));
-        chainingWithReplacement.insert(new Student("Frank", 111));
-        chainingWithReplacement.insert(new Student("Grace", 110));
-        chainingWithReplacement.insert(new Student("Hannah", 115));
+        chainingWithReplacement.insert(new Student(101));
+        chainingWithReplacement.insert(new Student(102));
+        chainingWithReplacement.insert(new Student(111));
+        chainingWithReplacement.insert(new Student(110));
+        chainingWithReplacement.insert(new Student(115));
+        chainingWithReplacement.insert(new Student(120));
+        chainingWithReplacement.insert(new Student(121));
+        chainingWithReplacement.insert(new Student(122));
+
+        System.out.println("Chaining With Replacement");
         chainingWithReplacement.display();
     }
 }
