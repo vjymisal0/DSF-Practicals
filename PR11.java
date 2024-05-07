@@ -1,10 +1,10 @@
 import java.io.*;
 
-class Record {
+class Record1 {
     private int id;
     private String name;
 
-    public Record(int id, String name) {
+    public Record1(int id, String name) {
         this.id = id;
         this.name = name;
     }

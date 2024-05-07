@@ -1,10 +1,10 @@
 import java.util.*;
 
-class Student {
+class Student1 {
 
     int rollNumber;
 
-    public Student(int rollNumber) {
+    public Student1(int rollNumber) {
 
         this.rollNumber = rollNumber;
     }
