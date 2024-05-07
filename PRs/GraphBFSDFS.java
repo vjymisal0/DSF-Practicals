@@ -6,11 +6,12 @@ class GraphBFSDFS {
     private LinkedList<Integer> adj[]; // Adjacency list representation
 
     // Constructor
+    @SuppressWarnings("unchecked")
     GraphBFSDFS(int v) {
         V = v;
         adj = new LinkedList[v];
         for (int i = 0; i < v; ++i)
-            adj[i] = new LinkedList();
+            adj[i] = new LinkedList<>();
     }
 
     // Function to add an edge to the graph
@@ -25,7 +26,6 @@ class GraphBFSDFS {
 
         // Create a queue for BFS
         LinkedList<Integer> queue = new LinkedList<>();
-
         // Mark the current node as visited and enqueue it
         visited[s] = true;
         queue.add(s);
