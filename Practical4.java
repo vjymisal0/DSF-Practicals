@@ -29,7 +29,7 @@ class Graph {
 
             for (int neighbor : adjacencyList[currentVertex]) {
                 if (!visited[neighbor]) {
-                    visited[neighbor] = true;
+                    visited[neighbor] = true;  
                     queue.add(neighbor);
                 }
             }

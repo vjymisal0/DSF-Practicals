@@ -1,5 +1,7 @@
 import java.util.*;
 
+import jdk.jshell.execution.Util;
+
 // Class representing a graph
 class GraphBFSDFS {
     private int V; // Number of vertices
@@ -83,11 +85,16 @@ class GraphBFSDFS {
         g.addEdge(2, 0);
         g.addEdge(2, 3);
         g.addEdge(3, 3);
+        g.addEdge(3, 0);
 
-        System.out.println("BFS traversal:");
-        g.BFS(2);
-
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the source vertex for BFS:");
+        int source = sc.nextInt();
+        System.out.println("\nBFS traversal:");
+        g.BFS(source);
+        System.out.println("\n\nEnter the source vertex for DFS:");
+        source = sc.nextInt();
         System.out.println("\nDFS traversal:");
-        g.DFS(2);
+        g.DFS(source);
     }
 }
