@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Scanner;
 
 public class Dijkstras {
     public static void dijkstra(int[][] graph, int start) {
@@ -8,7 +7,7 @@ public class Dijkstras {
         boolean[] visited = new boolean[n];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[start] = 0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(i -> dist[i]));
         pq.add(start);
         while (!pq.isEmpty()) {
             int u = pq.poll();
@@ -27,7 +26,7 @@ public class Dijkstras {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter an no. of vertices:");
+        System.out.println("Enter the number of vertices:");
         int V = sc.nextInt();
         int[][] graph = new int[V][V];
         System.out.println("Enter the adjacency matrix of the graph:");
@@ -38,7 +37,7 @@ public class Dijkstras {
         }
         System.out.print("Enter the source vertex: ");
         int src = sc.nextInt();
-        Dijkstras da = new Dijkstras();
-        da.dijkstra(graph, src);
+        dijkstra(graph, src);
+        sc.close();
     }
 }
