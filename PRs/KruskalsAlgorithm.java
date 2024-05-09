@@ -1,7 +1,5 @@
 import java.util.*;
 
-import other.Edge;
-
 class Edge implements Comparable<Edge> {
     int src, dest, weight;
 
@@ -94,7 +92,6 @@ public class KruskalsAlgorithm {
         graph.addEdge(3, 6, 3);
         graph.addEdge(4, 6, 3);
         graph.addEdge(5, 6, 2);
-
         graph.kruskalMST();
     }
 }
